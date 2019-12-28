@@ -1,8 +1,15 @@
 
 # about this docker image
 
-Python3.4.3 Environment
-FROM python:3.4.3
+Python3.4.3 Environment  
+FROM python:3.4.3  
+https://hub.docker.com/_/python?tab=tags&page=1&name=3.4.3
+
+### pull official image
+
+```
+$ docker pull python:3.4.3
+```
 
 ### build & container start
 
