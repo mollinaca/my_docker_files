@@ -1,8 +1,10 @@
 version: '3'
+
 services:
   cpp:
-    restart: no
     build: .
+    image: mollinaca/personal:cpp
+    restart: 'no'
     container_name: 'cpp'
     working_dir: '/root/docker/cpp/'
     tty: true
