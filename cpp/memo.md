@@ -16,3 +16,9 @@ $ docker-compose start
 ```
 $ ./exec.sh
 ```
+
+### push image to Docker.hub
+
+```
+$ docker push mollinaca/personal:cpp
+```
