@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  python343:
+    build: .
+    image: mollinaca/personal:python343
+    restart: 'no'
+    container_name: 'python343'
+    working_dir: '/root/docker/python343/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
