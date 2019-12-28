@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cpp:
+#   restart: always
+    build: .
+    container_name: 'cpp'
+    working_dir: '/root/docker/cpp/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
