@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  {SERVICE_NAME}:
+    build: .
+    image: mollinaca/personal:{SERVICE_NAME}
+    restart: 'no'
+    container_name: '{SERVICE_NAME}'
+    working_dir: '/root/docker/{DIR}/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
