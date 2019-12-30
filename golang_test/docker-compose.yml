@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  golang_test:
+    build: .
+    image: mollinaca/personal:golang_test
+    restart: 'no'
+    container_name: 'golang_test'
+    working_dir: '/root/docker/golang_test/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
