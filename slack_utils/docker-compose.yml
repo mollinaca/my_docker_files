@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  slack_utils:
+    build: .
+    image: mollinaca/personal:python3.8
+    restart: 'no'
+    container_name: 'slack_utils'
+    working_dir: '/root/docker/slack_utils/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
