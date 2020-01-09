@@ -1,0 +1,3 @@
+grafana/grafana-data/*
+grafana/log/*
+prom/prometheus-data/*

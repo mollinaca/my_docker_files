@@ -5,27 +5,58 @@ services:
     build:
       context: .
       dockerfile: prom/Dockerfile
-    image: mollinaca/personal:prometheus
+    image: moogle/prometheus:v2.15.2
     container_name: prometheus
     network_mode: bridge
+    tty: true
     volumes:
       - ./prom/prometheus-data:/prometheus
       - ./prom/conf/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
-    restart: always
+    restart: 'no'
 
   grafana:
     build:
       context: .
       dockerfile: grafana/Dockerfile
-    image: mollinaca/personal:grafana
+    image: moogle/grafana:6.5.2
     container_name: grafana
     network_mode: bridge
+    tty: true
     volumes:
       - ./grafana/grafana-data:/var/lib/grafana
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - ./grafana/log:/var/log/grafana
     ports:
       - 3000:3000
-    restart: always
+    restart: 'no'
+
+  node_exporter:
+    build:
+      context: .
+      dockerfile: node_exporter/Dockerfile
+    image: moogle/node_exporter:v0.18.1
+    container_name: node_exporter
+    network_mode: bridge
+    tty: true
+    ports:
+      - 9100:9100
+    restart: 'no'
+
+  cadvisor:
+    build:
+      context: .
+      dockerfile: cadvisor/Dockerfile
+    image: moogle/cadvisor:v0.35.0
+    container_name: cadvisor
+    network_mode: bridge
+    tty: true
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8080:8080
+    restart: 'no'
