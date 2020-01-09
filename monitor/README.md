@@ -39,7 +39,7 @@ $ docker-compose up -d --build
 ブラウザで `http://<IPaddress>:3000` → grafana へアクセス、 admin/admin でログインできることを確認  
 ブラウザで `http://<IPaddress>:9090` → prometheusへアクセスできることを確認  
 
-grafanaへログインし、Add data source → prometheus → http://<IPaddress>:9090 を追加 → Save & Test → 追加されることを確認  
+grafanaへログインし、Add data source → prometheus → `http://<IPaddress>:9090` を追加 → Save & Test → 追加されることを確認  
 
 # update docker image version or config files
 
