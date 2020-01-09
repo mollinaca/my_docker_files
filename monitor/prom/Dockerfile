@@ -1,7 +1,5 @@
 FROM prom/prometheus:v2.15.2
 
-LABEL maintainer "Shotaro Hosoya <morisyot@square-enix.com>"
-
 ENV TZ JST-9
 ENV TERM xterm
 ENV HOSTNAME prometheus
