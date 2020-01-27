@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  python368:
+    build: .
+    image: mollinaca/personal:python368
+    restart: 'alywas'
+    container_name: 'python368'
+    working_dir: '/root/docker/python368/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
