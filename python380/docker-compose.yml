@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  python380:
+    build: .
+    image: mollinaca/personal:python380
+    restart: 'no'
+    container_name: 'python380'
+    working_dir: '/root/docker/python380/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
