@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  paiza_python:
+    build: .
+    image: mollinaca/personal:paiza_python
+    restart: 'no'
+    container_name: 'paiza_python'
+    working_dir: '/root/docker/paiza_python/'
+    tty: true
+    volumes:
+      - ./opt:/root/opt
