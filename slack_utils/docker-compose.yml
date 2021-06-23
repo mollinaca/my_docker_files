@@ -4,7 +4,7 @@ services:
   slack_utils:
     build: .
     image: mollinaca/personal:python3.8
-    restart: 'no'
+    restart: 'always'
     container_name: 'slack_utils'
     working_dir: '/root/docker/slack_utils/'
     tty: true
